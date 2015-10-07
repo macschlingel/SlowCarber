@@ -7,3 +7,6 @@
 [submodule "content"]
 	path = content
 	url = https://github.com/macschlingel/SlowCarber-Content.git
+[submodule "git-commit-and-push-content"]
+	path = site/plugins/git-commit-and-push-content
+	url = https://github.com/Pascalmh/kirby-git-commit-and-push-content.git
