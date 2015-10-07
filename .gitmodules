@@ -1,0 +1,9 @@
+[submodule "kirby"]
+	path = kirby
+	url = https://github.com/getkirby/kirby
+[submodule "panel"]
+	path = panel
+	url = https://github.com/getkirby/panel
+[submodule "content"]
+	path = content
+	url = https://github.com/macschlingel/SlowCarber-Content.git
