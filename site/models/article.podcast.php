@@ -10,7 +10,7 @@ class ArticlePodcastPage extends Page {
 	 * @return boolean
 	 */
 	public function hasAudio() {
-		return !empty($this->audioFormats());
+		return $this->audioFormats() != array();
 	}
 	
 	/**
