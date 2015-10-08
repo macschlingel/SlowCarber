@@ -10,7 +10,7 @@ header('Content-type: application/rss+xml; charset="utf-8"');
 require_once('assets/plugins/getid3/getid3.php');
 
 //Enable/disable Podtrac Tracking (only use if you have set up an account/Show at podtrac.com)
-$enablePodtrac = true;
+$enablePodtrac = false;
 
 ?>
 <rss version="2.0"
@@ -34,7 +34,7 @@ $enablePodtrac = true;
 
      <itunes:author>Bastian Woelfle</itunes:author>
     <itunes:subtitle>Abnehmen mit der "4 Stunden Körper Diät" von Tim Ferris</itunes:subtitle>
-    <itunes:summary>4HourGeeks - Einfach, erfolgreich und dauerhaft abhnehmen mit der "4 Stunden Körper Diät" von Tim Ferris - Von Geeks, für Geeks und alle die Abnehmen und gesünder leben wollen</itunes:summary>
+    <itunes:summary>SlowCarber - Einfach, erfolgreich und dauerhaft abhnehmen mit der "4 Stunden Körper Diät" von Tim Ferris - Von Geeks, für Geeks und alle die Abnehmen und gesünder leben wollen</itunes:summary>
     <description><?php echo (isset($description)) ? xml($description) : xml($page->description()) ?></description>
     <itunes:owner>
            <itunes:name>Bastian Woelfle</itunes:name>
@@ -80,6 +80,9 @@ $enablePodtrac = true;
                     if($enablePodtrac) {
                         $MP3enclosureURL = 'http://www.podtrac.com/pts/redirect.mp3/' . $item->audioUri('mp3');
                         $AACenclosureURL = 'http://www.podtrac.com/pts/redirect.mp3/' . $item->audioUri('m4a');
+                    } else {
+                        $MP3enclosureURL = $item->audioUri('mp3');
+                        $AACenclosureURL = $item->audioUri('m4a');
                     }
                 ?>
 
