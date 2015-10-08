@@ -7,4 +7,4 @@ echo "Creating a new link to content dir..."
 ln -s ../../../../repos/slowcarber-content content
 
 echo "Notifying Slack"
-curl -X POST --data-urlencode 'payload={"channel": "#slowcarber", "username": "webserver", "text": "Changes receid. Now live."}' $slackURL
+curl -X POST --data-urlencode 'payload={"channel": "#slowcarber", "username": "webserver", "text": "Pulled git changes. Deployed to site."}' $slackURL
