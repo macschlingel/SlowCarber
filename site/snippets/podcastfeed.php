@@ -81,8 +81,8 @@ $enablePodtrac = false;
                         $MP3enclosureURL = 'http://www.podtrac.com/pts/redirect.mp3/' . $item->audioUri('mp3');
                         $AACenclosureURL = 'http://www.podtrac.com/pts/redirect.mp3/' . $item->audioUri('m4a');
                     } else {
-                        $MP3enclosureURL = $item->audioUri('mp3');
-                        $AACenclosureURL = $item->audioUri('m4a');
+                        $MP3enclosureURL = 'http://' . $item->audioUri('mp3');
+                        $AACenclosureURL = 'http://' . $item->audioUri('m4a');
                     }
                 ?>
 
