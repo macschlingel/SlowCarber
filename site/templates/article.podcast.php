@@ -1,4 +1,11 @@
-<?php $enablePodtrac = false; ?>
+<?php $enablePodtrac = false; 
+if($enablePodtrac){
+	$URLPrefix = "http://www.podtrac.com/pts/redirect.mp3/";
+} else {
+	$URLPrefix = "http://";
+}
+?>
+
 <?php snippet('header'); ?>
 <?php snippet('menu'); ?>
 <?php snippet('checkpubtime'); ?>
@@ -18,14 +25,11 @@
 							<?php if($page->hasAudio()): ?>
                                 <br><br>
                                 <div id="enclosure">
-                                <audio src="<?php echo 'http://www.podtrac.com/pts/redirect.mp3/' . $page->audioUri('mp3') ?>" type="audio/mp3" controls="controls"></audio><br>
+	                            
+                                <audio src="<?php echo $URLPrefix.$page->audioUri('mp3') ?>" type="audio/mp3" controls="controls"></audio><br>
                                 
                                 <?php foreach($page->audioFormats() as $format):
-                                if ($enablePodtrac){
-                                	echo ('<a href="http://www.podtrac.com/pts/redirect.mp3/'. $page->audioUri($format).'">Folge herunterladen ('.$format.')</a><br>');
-                                } else {
-                                	echo ('<a href="http://'. $page->audioUri($format).'">Folge herunterladen ('.$format.')</a><br>');
-                                }
+                               	echo ('<a href="'.$URLPrefix.$page->audioUri($format).'">Folge herunterladen ('.$format.')</a><br>');
                                 endforeach ?>
                                 </div>
 							<?php endif; ?>

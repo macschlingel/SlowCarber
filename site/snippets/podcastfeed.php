@@ -10,7 +10,13 @@ header('Content-type: application/rss+xml; charset="utf-8"');
 require_once('assets/plugins/getid3/getid3.php');
 
 //Enable/disable Podtrac Tracking (only use if you have set up an account/Show at podtrac.com)
-$enablePodtrac = false;
+<?php $enablePodtrac = false; 
+if($enablePodtrac){
+	$URLPrefix = "http://www.podtrac.com/pts/redirect.mp3/";
+} else {
+	$URLPrefix = "http://";
+}
+?>
 
 ?>
 <rss version="2.0"
@@ -77,13 +83,8 @@ $enablePodtrac = false;
                 <itunes:duration><?php echo $duration; ?></itunes:duration>
                 <itunes:keywords><?php echo $item->keywords(); ?></itunes:keywords>
                 <?php
-                    if($enablePodtrac) {
-                        $MP3enclosureURL = 'http://www.podtrac.com/pts/redirect.mp3/' . $item->audioUri('mp3');
-                        $AACenclosureURL = 'http://www.podtrac.com/pts/redirect.mp3/' . $item->audioUri('m4a');
-                    } else {
-                        $MP3enclosureURL = 'http://' . $item->audioUri('mp3');
-                        $AACenclosureURL = 'http://' . $item->audioUri('m4a');
-                    }
+                        $MP3enclosureURL = $URLPrefix . $item->audioUri('mp3');
+                        $AACenclosureURL = $URLPrefix . $item->audioUri('m4a');
                 ?>
 
                 <?php if ($page->mediatype() == 'mp3'): ?>
