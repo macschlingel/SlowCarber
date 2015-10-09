@@ -1,4 +1,4 @@
-<?php $enablePodtrac = true; ?>
+<?php $enablePodtrac = false; ?>
 <?php snippet('header'); ?>
 <?php snippet('menu'); ?>
 <?php snippet('checkpubtime'); ?>
@@ -20,9 +20,13 @@
                                 <div id="enclosure">
                                 <audio src="<?php echo 'http://www.podtrac.com/pts/redirect.mp3/' . $page->audioUri('mp3') ?>" type="audio/mp3" controls="controls"></audio><br>
                                 
-                                <?php foreach($page->audioFormats() as $format): ?>
-                                <a href="<?php echo 'http://www.podtrac.com/pts/redirect.mp3/' . $page->audioUri($format) ?>">Folge herunterladen (<?php echo $format ?>)</a><br>
-                                <?php endforeach ?>
+                                <?php foreach($page->audioFormats() as $format):
+                                if ($enablePodtrac){
+                                	echo ('<a href="http://www.podtrac.com/pts/redirect.mp3/'. $page->audioUri($format).'">Folge herunterladen ('.$format.')</a><br>');
+                                } else {
+                                	echo ('<a href="http://'. $page->audioUri($format).'">Folge herunterladen ('.$format.')</a><br>');
+                                }
+                                endforeach ?>
                                 </div>
 							<?php endif; ?>
 							<footer class="post-sub">
