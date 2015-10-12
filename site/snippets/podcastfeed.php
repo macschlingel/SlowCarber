@@ -44,14 +44,11 @@ if($enablePodtrac){
            <itunes:email>info@slowcarber.de</itunes:email>
     </itunes:owner>
     <itunes:keywords>slow carb, low carb, 4 hour body, 4 hour geeks, 4hg, ferris, 4 stunden körper, diät, abhnehmen, ernährung, gadgets, geeks, fitness</itunes:keywords>
-
-<itunes:explicit>No</itunes:explicit>
-
-<itunes:image href="<?php echo url('assets/media/iTunes.png') ?>/>
-
-<itunes:category text="Health">
-     <itunes:category text="Fitness &amp; Nutrition"/>
-</itunes:category>
+	<itunes:explicit>No</itunes:explicit>
+	<itunes:image href="<?php echo url('assets/media/iTunes.png') ?>"/>
+	<itunes:category text="Health">
+    	<itunes:category text="Fitness &amp; Nutrition"/>
+	</itunes:category>
 
     <?php foreach($items as $item): ?>
         <?php if($item->hasAudio()): ?>
