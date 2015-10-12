@@ -10,7 +10,7 @@ header('Content-type: application/rss+xml; charset="utf-8"');
 require_once('assets/plugins/getid3/getid3.php');
 
 //Enable/disable Podtrac Tracking (only use if you have set up an account/Show at podtrac.com)
-$enablePodtrac = false; 
+$enablePodtrac = true; 
 if($enablePodtrac){
 	$URLPrefix = "http://www.podtrac.com/pts/redirect.mp3/";
 } else {

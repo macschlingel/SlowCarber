@@ -1,4 +1,4 @@
-<?php $enablePodtrac = false; 
+<?php $enablePodtrac = true; 
 if($enablePodtrac){
 	$URLPrefix = "http://www.podtrac.com/pts/redirect.mp3/";
 } else {
