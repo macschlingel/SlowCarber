@@ -39,7 +39,6 @@ if($enablePodtrac){
      <itunes:author>Bastian Woelfle</itunes:author>
     <itunes:subtitle>Abnehmen mit der "4 Stunden Körper Diät" von Tim Ferris</itunes:subtitle>
     <itunes:summary>SlowCarber - Einfach, erfolgreich und dauerhaft abhnehmen mit der "4 Stunden Körper Diät" von Tim Ferris - Von Geeks, für Geeks und alle die Abnehmen und gesünder leben wollen</itunes:summary>
-    <description><?php echo (isset($description)) ? xml($description) : xml($page->description()) ?></description>
     <itunes:owner>
            <itunes:name>Bastian Woelfle</itunes:name>
            <itunes:email>info@slowcarber.de</itunes:email>
