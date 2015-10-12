@@ -23,8 +23,7 @@ if($enablePodtrac){
     xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-    xml:lang="de-DE"
-	encoding="UTF-8"?>
+    xml:lang="de-DE"?>
 
   <channel>
     <title><?php echo (isset($title)) ? xml($title) : xml($page->title()) ?></title>
