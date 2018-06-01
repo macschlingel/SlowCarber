@@ -5,7 +5,7 @@ snippet('feed', array(
   'link'  => url('blog'),
   'items' => $articles,
   'descriptionExcerpt' => false,
-  'descriptionField'  => 'text'
+  'descriptionField'  => $page->text()->kirbytext()->value()
 ));
 
 ?>
