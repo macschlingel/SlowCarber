@@ -1,5 +1,5 @@
-<?php 
-$articles = $pages->find('blog')->children()->visible()->flip()->limit(50);
+<?php
+$articles = $pages->find('blog')->children()->visible()->flip();
 
 snippet('feed', array(
   'link'  => url('blog'),
@@ -9,4 +9,3 @@ snippet('feed', array(
 ));
 
 ?>
-
